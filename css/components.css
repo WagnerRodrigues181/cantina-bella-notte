@@ -1,0 +1,360 @@
+/* botões principais */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2rem;
+  border-radius: var(--raio-sm);
+  font-family: var(--fonte-corpo);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  transition: var(--transicao);
+}
+
+.btn--primary {
+  background: var(--cor-primaria);
+  color: var(--cor-branco);
+}
+
+.btn--primary:hover {
+  background: var(--cor-primaria-esc);
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-media);
+  color: var(--cor-branco);
+}
+
+.btn--outline {
+  border: 2px solid var(--cor-branco);
+  color: var(--cor-branco);
+}
+
+.btn--outline:hover {
+  background: var(--cor-branco);
+  color: var(--cor-primaria);
+  transform: translateY(-2px);
+}
+
+/* navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1.4rem 0;
+  transition: var(--transicao);
+}
+
+.navbar--scrolled {
+  background: var(--cor-fundo);
+  padding: 0.9rem 0;
+  box-shadow: var(--sombra-suave);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__logo {
+  font-family: var(--fonte-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--cor-branco);
+  transition: var(--transicao);
+}
+
+/* quando rola, logo fica escura */
+.navbar--scrolled .navbar__logo {
+  color: var(--cor-texto);
+}
+
+.navbar__links {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.navbar__links a {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  transition: var(--transicao);
+}
+
+/* underline animado nos links */
+.navbar__links a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--cor-dourado);
+  transition: width 0.3s ease;
+}
+
+.navbar__links a:hover::after {
+  width: 100%;
+}
+
+.navbar--scrolled .navbar__links a {
+  color: var(--cor-texto-suave);
+}
+.navbar--scrolled .navbar__links a:hover {
+  color: var(--cor-primaria);
+}
+
+/* hambúrguer — só aparece no mobile */
+.navbar__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+}
+
+.navbar__toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--cor-branco);
+  border-radius: 2px;
+  transition: var(--transicao);
+}
+
+.navbar--scrolled .navbar__toggle span {
+  background: var(--cor-texto);
+}
+
+/* animação do X ao abrir */
+.navbar__toggle--open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.navbar__toggle--open span:nth-child(2) {
+  opacity: 0;
+}
+.navbar__toggle--open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* card do cardápio */
+.prato-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.2rem 1.4rem;
+  background: var(--cor-branco);
+  border-radius: var(--raio);
+  border: 1px solid rgba(196, 82, 42, 0.1);
+  box-shadow: var(--sombra-suave);
+  transition: var(--transicao);
+  position: relative;
+  overflow: hidden;
+}
+
+.prato-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--sombra-media);
+  border-color: rgba(196, 82, 42, 0.3);
+}
+
+.prato-card__info h3 {
+  font-family: var(--fonte-display);
+  font-size: 1.05rem;
+  margin-bottom: 0.3rem;
+  color: var(--cor-texto);
+}
+
+.prato-card__info p {
+  font-size: 0.875rem;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+.prato-card__preco {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--cor-primaria);
+  white-space: nowrap;
+}
+
+.prato-card__badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--cor-dourado);
+  color: var(--cor-branco);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-bottom-left-radius: var(--raio-sm);
+}
+
+/* botões de filtro do cardápio */
+.filtro-btn {
+  padding: 0.6rem 1.4rem;
+  border-radius: 50px;
+  border: 2px solid rgba(196, 82, 42, 0.25);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--cor-texto-suave);
+  transition: var(--transicao);
+}
+
+.filtro-btn:hover,
+.filtro-btn.active {
+  background: var(--cor-primaria);
+  border-color: var(--cor-primaria);
+  color: var(--cor-branco);
+}
+
+/* cards de depoimento */
+.depoimento-card {
+  background: var(--cor-branco);
+  border-radius: var(--raio);
+  padding: 2rem;
+  box-shadow: var(--sombra-suave);
+  border: 1px solid rgba(196, 82, 42, 0.08);
+  position: relative;
+}
+
+/* aspas decorativas */
+.depoimento-card::before {
+  content: '"';
+  font-family: var(--fonte-display);
+  font-size: 5rem;
+  color: var(--cor-dourado);
+  opacity: 0.2;
+  position: absolute;
+  top: -0.5rem;
+  left: 1.2rem;
+  line-height: 1;
+}
+
+.depoimento-card__estrelas {
+  color: var(--cor-dourado);
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+  letter-spacing: 2px;
+}
+
+.depoimento-card p {
+  font-style: italic;
+  margin-bottom: 1.2rem;
+}
+
+.depoimento-card__autor {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--cor-fundo-alt);
+  border: 2px solid var(--cor-dourado);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--cor-primaria);
+  flex-shrink: 0;
+}
+
+.depoimento-card__autor span {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--cor-texto);
+}
+
+/* WhatsApp flutuante */
+.whatsapp-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 56px;
+  height: 56px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 99;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+  animation: pulse 2.5s infinite;
+  transition: var(--transicao);
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  color: white;
+}
+
+.whatsapp-float svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* botão voltar ao topo */
+.btn-topo {
+  position: fixed;
+  bottom: 5.5rem;
+  right: 2rem;
+  width: 40px;
+  height: 40px;
+  background: var(--cor-primaria);
+  color: var(--cor-branco);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transicao);
+  box-shadow: var(--sombra-suave);
+}
+
+.btn-topo--visivel {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.btn-topo:hover {
+  background: var(--cor-primaria-esc);
+}
+.btn-topo svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* pilares da seção Sobre */
+.pilar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cor-texto-suave);
+}
+
+.pilar__icone {
+  color: var(--cor-primaria);
+  width: 28px;
+  height: 28px;
+}
