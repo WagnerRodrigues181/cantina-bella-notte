@@ -1,0 +1,66 @@
+body {
+  font-family: var(--fonte-corpo);
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--fonte-display);
+  line-height: 1.2;
+  color: var(--cor-texto);
+}
+
+p {
+  color: var(--cor-texto-suave);
+  margin-bottom: var(--espaco-sm);
+}
+p:last-child {
+  margin-bottom: 0;
+}
+
+a:hover {
+  color: var(--cor-primaria);
+}
+
+.section__eyebrow {
+  display: block;
+  font-family: var(--fonte-corpo);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cor-primaria);
+  margin-bottom: var(--espaco-xs);
+}
+
+.section__title {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  color: var(--cor-texto);
+  margin-bottom: var(--espaco-md);
+}
+
+.section__title::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--cor-dourado);
+  margin-top: 0.6rem;
+}
+
+.section__header {
+  text-align: center;
+}
+.section__header .section__title::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section {
+  padding: var(--espaco-xl) 0;
+}
