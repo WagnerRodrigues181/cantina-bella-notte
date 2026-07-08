@@ -444,3 +444,28 @@
     min-height: 280px;
   }
 }
+
+/*=== Cardápio ===*/
+.cardapio {
+  background: var(--cor-fundo-alt);
+}
+
+.cardapio__filtros {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-bottom: var(--espaco-lg);
+}
+
+.cardapio__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .cardapio__grid {
+    grid-template-columns: 1fr;
+  }
+}
