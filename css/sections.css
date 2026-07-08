@@ -527,3 +527,16 @@
     grid-auto-rows: 160px;
   }
 }
+
+/*=== Depoimentos ===*/
+.depoimentos__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .depoimentos__grid {
+    grid-template-columns: 1fr;
+  }
+}
