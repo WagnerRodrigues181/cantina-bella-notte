@@ -84,3 +84,24 @@
     grid-template-columns: 1fr;
   }
 }
+
+/*=== Touch targets mínimos (mobile) ===*/
+@media (max-width: 768px) {
+  .filtro-btn {
+    min-height: 44px;
+    padding: 0.7rem 1.4rem;
+  }
+
+  .navbar__toggle {
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn-topo {
+    width: 44px;
+    height: 44px;
+    bottom: 6rem;
+  }
+}
