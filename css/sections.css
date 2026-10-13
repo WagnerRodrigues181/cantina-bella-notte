@@ -277,7 +277,8 @@
   color: var(--cor-dourado);
 }
 
-.footer__redes svg {
+.footer__redes svg,
+.footer__redes img {
   width: 18px;
   height: 18px;
 }
@@ -694,7 +695,8 @@
   transform: translateY(-3px);
 }
 
-.footer__redes svg {
+.footer__redes svg,
+.footer__redes img {
   width: 18px;
   height: 18px;
 }
